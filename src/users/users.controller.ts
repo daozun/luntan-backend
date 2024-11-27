@@ -17,11 +17,6 @@ export class UsersController {
 
   @Post()
   create(@Body() createUserDto: CreateUserDto) {
-    console.log(
-      '%c [ createUserDto ]-12',
-      'font-size:13px; background:pink; color:#bf2c9f;',
-      createUserDto,
-    );
     return this.usersService.create(createUserDto);
   }
 
