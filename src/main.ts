@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+import { ValidationPipe } from '@nestjs/common';
 import { GlobalFilter } from './common/filter/global/global.filter';
 import { PrismaFilter } from './common/filter/prisma/prisma.filter';
 
@@ -20,6 +21,8 @@ async function bootstrap() {
 
   app.useGlobalFilters(new GlobalFilter());
   app.useGlobalFilters(new PrismaFilter());
+
+  app.useGlobalPipes(new ValidationPipe());
 
   await app.listen(3000);
 }

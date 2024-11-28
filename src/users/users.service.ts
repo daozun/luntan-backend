@@ -26,6 +26,10 @@ export class UsersService {
     return R.fail('创建失败');
   }
 
+  login(createUserDto: CreateUserDto) {
+    throw new Error('Method not implemented.');
+  }  
+
   findAll() {
     return `This action returns all users`;
   }
