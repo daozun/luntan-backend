@@ -20,6 +20,11 @@ export class UsersController {
     return this.usersService.create(createUserDto);
   }
 
+  @Post('register')
+  register(@Body() createUserDto: CreateUserDto) {
+    return this.usersService.create(createUserDto);
+  }
+
   @Post('login')
   login(@Body() createUserDto: CreateUserDto) {
     return this.usersService.login(createUserDto);
