@@ -6,7 +6,7 @@ import { PrismaService } from '../prisma.service';
 import { AuthService } from "@/auth/auth.service"
 import { User, Prisma } from '@prisma/client';
 import { R } from '@/result';
-import { hashPassword, comparePassword, generateToken } from '@/utils';
+import { hashPassword, comparePassword } from '@/utils';
 import { omit } from 'lodash';
 
 @Injectable()
