@@ -13,7 +13,7 @@ import { TimezoneInterceptor } from '@/common/interceptor/TimezoneInterceptor';
     JwtModule.register({
       global: true,
       secret: constant.jwtSecret,
-      signOptions: { expiresIn: '7d' },
+      signOptions: { expiresIn: '1d' },
     }),
     UsersModule,
   ],

@@ -5,7 +5,7 @@ import {
   HttpStatus,
   ExecutionContext,
 } from '@nestjs/common';
-import { JwtService } from '@nestjs/jwt';
+import { JwtService, TokenExpiredError } from '@nestjs/jwt';
 import { constant } from '@/common/constant';
 
 @Injectable()
@@ -32,6 +32,13 @@ export class AuthGuard implements CanActivate {
 
         return res;
       } catch (e) {
+        if(e instanceof TokenExpiredError) {
+          throw new HttpException(
+            'token 已过期，请重新登陆',
+            HttpStatus.UNAUTHORIZED,
+          );
+        }
+
         throw new HttpException(
           '没有授权访问，请先登陆',
           HttpStatus.UNAUTHORIZED,
