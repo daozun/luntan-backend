@@ -7,6 +7,7 @@ import { UsersModule } from './users/users.module';
 import { PrismaService } from './prisma.service';
 import { constant } from '@/common/constant';
 import { TimezoneInterceptor } from '@/common/interceptor/TimezoneInterceptor';
+import { PostModule } from './post/post.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { TimezoneInterceptor } from '@/common/interceptor/TimezoneInterceptor';
       signOptions: { expiresIn: '1d' },
     }),
     UsersModule,
+    PostModule,
   ],
   controllers: [AppController],
   providers: [

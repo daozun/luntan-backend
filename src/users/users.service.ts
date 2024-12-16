@@ -1,5 +1,4 @@
 import { Injectable } from '@nestjs/common';
-import { JwtService } from '@nestjs/jwt';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { PrismaService } from '../prisma.service';
@@ -13,7 +12,6 @@ import { omit } from 'lodash';
 export class UsersService {
   constructor(
     private prisma: PrismaService,
-    private jwtService: JwtService,
     private authService: AuthService,
   ) {}
   async create(data: Prisma.UserCreateInput): Promise<R> {
