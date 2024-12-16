@@ -19,10 +19,10 @@ import { TimezoneInterceptor } from '@/common/interceptor/TimezoneInterceptor';
   ],
   controllers: [AppController],
   providers: [
-    {
-      provide: APP_INTERCEPTOR,
-      useClass: TimezoneInterceptor,
-    },
+    // {
+    //   provide: APP_INTERCEPTOR,
+    //   useClass: TimezoneInterceptor,
+    // },
     AppService,
     PrismaService,
   ],

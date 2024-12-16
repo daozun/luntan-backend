@@ -24,7 +24,7 @@ model User {
   password    String
   gender      Gender   @default(MALE)
   email       String?  @default("")
-  create_time DateTime @default(now())
-  update_time DateTime @updatedAt
+  create_time DateTime @default(dbgenerated("NOW()")) @db.DateTime
+  update_time DateTime @default(dbgenerated("NOW() ON UPDATE NOW()")) @db.Timestamp(0)
   delete_flag Boolean  @default(false)
 }
